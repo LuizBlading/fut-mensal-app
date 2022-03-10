@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista Jogadores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <h2>Adicionar Jogador</h2>
+    <ion-item>
+      <ion-input type="text" [value]="nomeJogador" placeholder="Nome Jogador"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="primary" (click)="buscarJogadores()">Adicionar Jogadores</ion-button>
+    <ion-button expand="block" color="success" (click)="buscarJogadores()">Buscar Jogadores</ion-button>
+
+    <p>{{nomeJogador}}</p>
+  </div>
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nome Jogador</ion-card-title>
+      <ion-card-subtitle>Mensal | Avulso</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Informações pessoais do jogador, como nome completo, endereço e etc
+    </ion-card-content>
+  </ion-card> -->
+  <div *ngIf="buscou">
+    <ion-card *ngFor="let jogador of Jogadores">
+      <ion-card-header>
+        <ion-card-title>{{jogador.nomeJogador}}</ion-card-title>
+        <ion-card-subtitle>{{jogador.tipoAssinatura}}</ion-card-subtitle>
+        <ion-card-subtitle>{{jogador.posicao}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{jogador.descricao}}
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

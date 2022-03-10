@@ -19,9 +19,9 @@ export class MenuComponent {
     this.menu.open('end');
   }
 
-  openCustom() {
-    this.menu.enable(false, 'custom');
-    this.menu.open('custom');
+  openMenu() {
+    this.menu.enable(false, 'menu');
+    this.menu.open('menu');
   }
 
 }
