@@ -1,6 +1,17 @@
 ion-header{
+  width: 100%;
   margin-bottom: 2em;
   text-align: center;
+  // display: flex;
+  // justify-content: space-between;
+
+  ion-toolbar{
+    margin: 0;
+  }
+
+  ion-title{
+    margin: 0;
+  }
 }
 
 #container {

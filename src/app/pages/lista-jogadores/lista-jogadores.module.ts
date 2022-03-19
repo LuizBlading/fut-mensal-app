@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ListaJogadoresPageRoutingModule } from './lista-jogadores-routing.module';
 
 import { ListaJogadoresPage } from './lista-jogadores.page';
+import { TabBarComponent } from 'src/app/components/tab-bar/tab-bar.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ListaJogadoresPage } from './lista-jogadores.page';
     IonicModule,
     ListaJogadoresPageRoutingModule
   ],
-  declarations: [ListaJogadoresPage]
+  declarations: [ListaJogadoresPage, TabBarComponent]
 })
 export class ListaJogadoresPageModule {}

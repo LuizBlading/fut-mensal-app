@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista Jogadores</ion-title>
+    <ion-title slor="start">Lista Jogadores</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
       <ion-input type="text" [value]="nomeJogador" placeholder="Nome Jogador"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" color="primary" (click)="buscarJogadores()">Adicionar Jogadores</ion-button>
+    <ion-button expand="block" color="primary">Adicionar Jogadores</ion-button>
     <ion-button expand="block" color="success" (click)="buscarJogadores()">Buscar Jogadores</ion-button>
 
     <p>{{nomeJogador}}</p>
@@ -29,6 +29,10 @@
   </ion-card> -->
   <div *ngIf="buscou">
     <ion-card *ngFor="let jogador of Jogadores">
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+
       <ion-card-header>
         <ion-card-title>{{jogador.nomeJogador}}</ion-card-title>
         <ion-card-subtitle>{{jogador.tipoAssinatura}}</ion-card-subtitle>
@@ -39,6 +43,8 @@
         {{jogador.descricao}}
       </ion-card-content>
     </ion-card>
-
   </div>
 </ion-content>
+
+<!-- Pesquisar porque com esse componente, nao consigo clicar nos botões -->
+<!-- <app-tab-bar></app-tab-bar> -->

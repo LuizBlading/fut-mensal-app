@@ -1,6 +1,10 @@
 ion-header{
     // margin-bottom: 2em;
-    text-align: center;
+    // text-align: center;
+
+    ion-title{
+        margin: 0;
+    }
 }
 
 ion-content{
@@ -17,5 +21,24 @@ ion-content{
     ion-button{
         margin: 1em;
         border-radius: 2em;
+    }
+
+    ion-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+
+    ion-avatar{
+        margin: 10px;
+
+        img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+        }
     }
 }

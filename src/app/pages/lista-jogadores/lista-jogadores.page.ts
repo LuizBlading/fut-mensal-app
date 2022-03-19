@@ -11,7 +11,8 @@ export class ListaJogadoresPage implements OnInit {
   // tipoAssinatura: string;
   // descricao: string;
 
-  buscou: boolean;
+  buscou: boolean = false;
+
   Jogadores = [
     {
       nomeJogador: 'Luiz Felipe da Silva',
@@ -40,9 +41,11 @@ export class ListaJogadoresPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // this.buscou = true;
   }
 
   buscarJogadores(){
     this.buscou = true;
+    console.log("Clicou!");
   }
 }
