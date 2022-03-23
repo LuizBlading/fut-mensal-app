@@ -8,43 +8,41 @@
 
   <div>
     <h2>Adicionar Jogador</h2>
-    <ion-item>
-      <ion-input type="text" [value]="nomeJogador" placeholder="Nome Jogador"></ion-input>
-    </ion-item>
+    <form formGroup="">
+      <ion-item>
+        <!-- <label slot="start">Nome: </label> -->
+        <ion-input type="text" [value]="nomeJogador" placeholder="Nome Jogador"></ion-input>
+      </ion-item>
 
-    <ion-button expand="block" color="primary">Adicionar Jogadores</ion-button>
+      <ion-item>
+        <!-- <label slot="start">Contrato: </label> -->
+        <ion-select placeholder="Contrato">
+          <ion-select-option value="Contrato" selected disabled>Contrato</ion-select-option>
+          <ion-select-option value="Mensalista">Mensalista</ion-select-option>
+          <ion-select-option value="Avulso">Avulso</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <!-- Fazer ngFor igual o Alisson fez no valegas -->
+        <ion-select placeholder="Posição">
+          <ion-select-option value="Goleiro">Goleiro</ion-select-option>
+          <ion-select-option value="Zagueiro">Zagueiro</ion-select-option>
+          <ion-select-option value="Lateral">Lateral</ion-select-option>
+          <ion-select-option value="Meio Campo">Meio Campo</ion-select-option>
+          <ion-select-option value="Atacante">Atacante</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </form>
+
+    <ion-button expand="block" color="primary" (click)="adicionarJogador()">Adicionar Jogadores</ion-button>
     <ion-button expand="block" color="success" (click)="buscarJogadores()">Buscar Jogadores</ion-button>
 
     <p>{{nomeJogador}}</p>
   </div>
-  <!-- <ion-card>
-    <ion-card-header>
-      <ion-card-title>Nome Jogador</ion-card-title>
-      <ion-card-subtitle>Mensal | Avulso</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Informações pessoais do jogador, como nome completo, endereço e etc
-    </ion-card-content>
-  </ion-card> -->
-  <div *ngIf="buscou">
-    <ion-card *ngFor="let jogador of Jogadores">
-      <ion-avatar>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
 
-      <ion-card-header>
-        <ion-card-title>{{jogador.nomeJogador}}</ion-card-title>
-        <ion-card-subtitle>{{jogador.tipoAssinatura}}</ion-card-subtitle>
-        <ion-card-subtitle>{{jogador.posicao}}</ion-card-subtitle>
-      </ion-card-header>
+  <app-card-perfil *ngIf="buscou"></app-card-perfil>
 
-      <ion-card-content>
-        {{jogador.descricao}}
-      </ion-card-content>
-    </ion-card>
-  </div>
 </ion-content>
 
-<!-- Pesquisar porque com esse componente, nao consigo clicar nos botões -->
-<!-- <app-tab-bar></app-tab-bar> -->
+<app-tab-bar></app-tab-bar>

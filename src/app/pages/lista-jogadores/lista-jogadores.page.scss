@@ -16,6 +16,11 @@ ion-content{
     ion-item{
         margin: 1em;
         border-radius: 1em;
+        border-bottom: 1px solid #24ffa4;
+
+        ion-select{
+            width: 100%;
+        }
     }
 
     ion-button{

@@ -1,0 +1,22 @@
+ion-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+ion-avatar{
+    margin: 10px;
+
+    width: 100px;
+    height: 100px;
+    img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        width: 100px;
+        height: 100px;
+    }
+}
