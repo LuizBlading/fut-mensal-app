@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { CardPerfilComponent } from 'src/app/components/card-perfil/card-perfil.component';
 
 @Component({
@@ -15,9 +16,12 @@ export class ListaJogadoresPage implements OnInit {
   // public cardJogadores: CardPerfilComponent;
 
   buscou: boolean = false;
+  isModalOpen: boolean;
+  // modalController: any;
 
   // TODO: Criar um "JogadorRequest() para salvar os nomes"
   constructor(
+    private modalController: ModalController
   ) { }
 
   ngOnInit() {
@@ -32,4 +36,11 @@ export class ListaJogadoresPage implements OnInit {
     
   }
 
+  closeModal(){
+   // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+  }
 }

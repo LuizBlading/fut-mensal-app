@@ -7,38 +7,51 @@
 <ion-content>
 
   <div>
-    <h2>Adicionar Jogador</h2>
-    <form formGroup="">
-      <ion-item>
-        <!-- <label slot="start">Nome: </label> -->
-        <ion-input type="text" [value]="nomeJogador" placeholder="Nome Jogador"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <!-- <label slot="start">Contrato: </label> -->
-        <ion-select placeholder="Contrato">
-          <ion-select-option value="Contrato" selected disabled>Contrato</ion-select-option>
-          <ion-select-option value="Mensalista">Mensalista</ion-select-option>
-          <ion-select-option value="Avulso">Avulso</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <!-- Fazer ngFor igual o Alisson fez no valegas -->
-        <ion-select placeholder="Posição">
-          <ion-select-option value="Goleiro">Goleiro</ion-select-option>
-          <ion-select-option value="Zagueiro">Zagueiro</ion-select-option>
-          <ion-select-option value="Lateral">Lateral</ion-select-option>
-          <ion-select-option value="Meio Campo">Meio Campo</ion-select-option>
-          <ion-select-option value="Atacante">Atacante</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </form>
-
-    <ion-button expand="block" color="primary" (click)="adicionarJogador()">Adicionar Jogadores</ion-button>
+    <ion-button expand="block" color="primary" id="trigger-button" (click)="adicionarJogador()">Adicionar Jogadores</ion-button>
     <ion-button expand="block" color="success" (click)="buscarJogadores()">Buscar Jogadores</ion-button>
 
     <p>{{nomeJogador}}</p>
+
+    <!-- <ion-button id="trigger-button">Click to open modal</ion-button> -->
+    <ion-modal trigger="trigger-button" [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title slor="start">Adicionar Jogador</ion-title>
+            <ion-button slot="end" color="none" (click)="closeModal()">Fechar</ion-button>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <!-- <h2>Adicionar Jogador</h2> -->
+          <form formGroup="">
+            <ion-item>
+              <!-- <label slot="start">Nome: </label> -->
+              <ion-input type="text" [value]="nomeJogador" placeholder="Nome Jogador"></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <!-- <label slot="start">Contrato: </label> -->
+              <ion-select placeholder="Contrato">
+                <ion-select-option value="Contrato" selected disabled>Contrato</ion-select-option>
+                <ion-select-option value="Mensalista">Mensalista</ion-select-option>
+                <ion-select-option value="Avulso">Avulso</ion-select-option>
+              </ion-select>
+            </ion-item>
+      
+            <ion-item>
+              <!-- Fazer ngFor igual o Alisson fez no valegas -->
+              <ion-select placeholder="Posição">
+                <ion-select-option value="Goleiro">Goleiro</ion-select-option>
+                <ion-select-option value="Zagueiro">Zagueiro</ion-select-option>
+                <ion-select-option value="Lateral">Lateral</ion-select-option>
+                <ion-select-option value="Meio Campo">Meio Campo</ion-select-option>
+                <ion-select-option value="Atacante">Atacante</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </form>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   </div>
 
   <app-card-perfil *ngIf="buscou"></app-card-perfil>
